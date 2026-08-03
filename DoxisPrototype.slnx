@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Savaged.Data.Doxis.API.Client/Savaged.Data.Doxis.API.Client.csproj" />
+  <Project Path="Savaged.Data.Doxis.API.Interfaces/Savaged.Data.Doxis.API.Interfaces.csproj" />
+</Solution>
