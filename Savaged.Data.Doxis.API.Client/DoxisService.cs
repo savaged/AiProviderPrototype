@@ -19,7 +19,7 @@ public class DoxisService : IDoxisService
 
     public HttpVerb Verb { get; }
 
-    public async Task<string> GetResponseBodyAsync(string body = "")
+    public async Task<string> EnactAsync(string body = "")
     {
         var response = await _doxisClient.GetResponseAsync(Verb, EndPoint, body);
         if (!response.IsSuccessStatusCode)

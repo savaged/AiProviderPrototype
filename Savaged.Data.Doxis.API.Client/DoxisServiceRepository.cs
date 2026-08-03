@@ -22,12 +22,12 @@ public class DoxisServiceRepository : IDoxisServiceRepository
     public async Task<string> SaveToStorageAsync(string fileLocation)
     {
         var service = _repository[SAVE_TO_STORAGE_SERVICE_END_POINT];
-        return await service.GetResponseBodyAsync();
+        return await service.EnactAsync();
     }
 
     public async Task<string> CaptureFinancialAsync()
     {
         var service = _repository[CAPTURE_FINANCIAL_SERVICE_END_POINT];
-        return await service.GetResponseBodyAsync();
+        return await service.EnactAsync();
     }
 }

@@ -9,5 +9,5 @@ public interface IDoxisService
 
     string EndPoint { get; }
 
-    Task<string> GetResponseBodyAsync(string body = "");
+    Task<string> EnactAsync(string body = "");
 }
