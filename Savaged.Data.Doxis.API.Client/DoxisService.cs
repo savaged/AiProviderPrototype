@@ -8,17 +8,20 @@ public class DoxisService : IDoxisService
 {
     private readonly IDoxisClient _doxisClient;
 
-    public DoxisService(IDoxisClient doxisClient, string endPoint)
+    public DoxisService(IDoxisClient doxisClient, string endPoint, HttpVerb verb = HttpVerb.POST)
     {
         _doxisClient = doxisClient;
         EndPoint = endPoint;
+        Verb = verb;
     }
 
     public string EndPoint { get; }
 
-    public async Task<string> GetResponseBodyAsync()
+    public HttpVerb Verb { get; }
+
+    public async Task<string> GetResponseBodyAsync(string body = "")
     {
-        var response = await _doxisClient.GetResponseAsync(EndPoint);
+        var response = await _doxisClient.GetResponseAsync(Verb, EndPoint, body);
         if (!response.IsSuccessStatusCode)
             return response.StatusCode.ToString();
         return await response.Content.ReadAsStringAsync();

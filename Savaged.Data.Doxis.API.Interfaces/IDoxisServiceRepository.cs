@@ -4,6 +4,6 @@ namespace Savaged.Data.Doxis.API.Interfaces;
 
 public interface IDoxisServiceRepository
 {
-    Task<string> SaveToStorageAsync();
+    Task<string> SaveToStorageAsync(string fileLocation);
     Task<string> CaptureFinancialAsync();
 }

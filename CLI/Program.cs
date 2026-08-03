@@ -15,6 +15,7 @@ IDoxisServiceRepository repos = new DoxisServiceRepository(
 
 Console.WriteLine("Running");
 
+
 var result = await repos.SaveToStorageAsync();
 Console.WriteLine(result);
 
