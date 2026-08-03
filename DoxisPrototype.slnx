@@ -2,4 +2,6 @@
   <Project Path="CLI/CLI.csproj" />
   <Project Path="Savaged.Data.Doxis.API.Client/Savaged.Data.Doxis.API.Client.csproj" />
   <Project Path="Savaged.Data.Doxis.API.Interfaces/Savaged.Data.Doxis.API.Interfaces.csproj" />
+  <Project Path="Savaged.Data.FileIO/Savaged.Data.FileIO.csproj" />
+  <Project Path="Savaged.Data.Interfaces/Savaged.Data.Interfaces.csproj" />
 </Solution>

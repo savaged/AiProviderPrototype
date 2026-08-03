@@ -1,6 +1,11 @@
 ﻿using Savaged.Data.Doxis.API.Interfaces;
 using Savaged.Data.Doxis.API.Client;
 
+if (args.Length != 1)
+{
+    Console.WriteLine("Please supply an invoice location");
+    return;
+}
 Console.WriteLine("Emulating DI");
 
 IDoxisClient client = new DoxisClient(
@@ -15,7 +20,6 @@ IDoxisServiceRepository repos = new DoxisServiceRepository(
 
 Console.WriteLine("Running");
 
-
-var result = await repos.SaveToStorageAsync();
+var result = await repos.SaveToStorageAsync(args[0]);
 Console.WriteLine(result);
 
