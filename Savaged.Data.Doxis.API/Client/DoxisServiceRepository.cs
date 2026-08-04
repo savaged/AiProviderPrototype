@@ -19,7 +19,7 @@ public class DoxisServiceRepository : IDoxisServiceRepository
         _saveToStorageBodyBuilder = saveToStorageBodyBuilder;
     }
 
-    public const string SAVE_TO_STORAGE_SERVICE_END_POINT = "document_capturing/v1/files";
+    public const string SAVE_TO_STORAGE_SERVICE_END_POINT = "storage/v1/files";
     public const string CAPTURE_FINANCIAL_SERVICE_END_POINT = "document_capturing/v1/financial";
 
     public async Task<string> SaveToStorageAsync(string fileLocation)
