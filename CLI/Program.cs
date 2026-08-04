@@ -1,4 +1,5 @@
-﻿using Savaged.Data.Doxis.API.Interfaces;
+﻿using Savaged.Data.FileIO;
+using Savaged.Data.Doxis.API.Interfaces;
 using Savaged.Data.Doxis.API.Client;
 
 if (args.Length != 1)
@@ -15,7 +16,7 @@ IDoxisClient client = new DoxisClient(
 
 IDoxisServiceRepository repos = new DoxisServiceRepository(
     new DoxisService(client, DoxisServiceRepository.SAVE_TO_STORAGE_SERVICE_END_POINT),
-    new SaveToStorageBodyBuilder(),
+    new SaveToStorageBodyBuilder(new LocalFileService()),
     new DoxisService(client, DoxisServiceRepository.CAPTURE_FINANCIAL_SERVICE_END_POINT)
     );
 

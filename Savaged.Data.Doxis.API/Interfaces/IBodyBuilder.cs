@@ -1,6 +1,8 @@
+using System.Threading.Tasks;
+
 namespace Savaged.Data.Doxis.API.Interfaces;
 
 public interface IBodyBuilder
 {
-    string Build(string input);
+    Task<string> BuildAsync(string input);
 }

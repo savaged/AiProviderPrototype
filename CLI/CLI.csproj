@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Savaged.Data.Doxis.API.Interfaces\Savaged.Data.Doxis.API.Interfaces.csproj" />
-    <ProjectReference Include="..\Savaged.Data.Doxis.API.Client\Savaged.Data.Doxis.API.Client.csproj" />
+    <ProjectReference Include="..\Savaged.Data.Doxis.API\Savaged.Data.Doxis.API.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

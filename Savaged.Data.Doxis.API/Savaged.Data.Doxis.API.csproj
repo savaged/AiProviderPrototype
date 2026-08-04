@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Savaged.Data.Interfaces\Savaged.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\Savaged.Data.FileIO\Savaged.Data.FileIO.csproj" />
+    <ProjectReference Include="..\Savaged.Core.Extensions\Savaged.Core.Extensions.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

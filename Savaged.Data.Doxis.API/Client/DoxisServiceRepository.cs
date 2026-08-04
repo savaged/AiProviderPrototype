@@ -24,7 +24,7 @@ public class DoxisServiceRepository : IDoxisServiceRepository
 
     public async Task<string> SaveToStorageAsync(string fileLocation)
     {
-        var body = _saveToStorageBodyBuilder.Build("todo");
+        var body = await _saveToStorageBodyBuilder.BuildAsync(fileLocation);
         var service = _repository[SAVE_TO_STORAGE_SERVICE_END_POINT];
         return await service.EnactAsync(body);
     }
