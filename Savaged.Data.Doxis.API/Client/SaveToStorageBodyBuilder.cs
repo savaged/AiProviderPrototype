@@ -18,6 +18,8 @@ public class SaveToStorageBodyBuilder : IBodyBuilder
     public async Task<string> BuildAsync(string fileLocation)
     {
         var stream = await _localFileService.OpenReadAsync(fileLocation);
+        if (stream == Stream.Null)
+            return $"File not found at {fileLocation}!";
         var data = new Upload(stream.ToBase64());
         return data.ToJson();
     }
