@@ -15,6 +15,7 @@ IDoxisClient client = new DoxisClient(
 
 IDoxisServiceRepository repos = new DoxisServiceRepository(
     new DoxisService(client, DoxisServiceRepository.SAVE_TO_STORAGE_SERVICE_END_POINT),
+    new SaveToStorageBodyBuilder(),
     new DoxisService(client, DoxisServiceRepository.CAPTURE_FINANCIAL_SERVICE_END_POINT)
     );
 
