@@ -1,7 +1,4 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
-
-namespace Savaged.Data.Doxis.API.Interfaces;
+﻿namespace Savaged.Data.Doxis.API.Interfaces;
 
 public interface IDoxisClient
 {

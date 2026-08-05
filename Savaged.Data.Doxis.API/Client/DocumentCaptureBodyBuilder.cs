@@ -1,8 +1,6 @@
-using Savaged.Data.Interfaces;
 using Savaged.Data.Doxis.API.Interfaces;
 using Savaged.Data.Doxis.API.Models;
 using Savaged.Core.Extensions;
-using System.Threading.Tasks;
 
 namespace Savaged.Data.Doxis.API.Client;
 
@@ -12,9 +10,9 @@ public class DocumentCaptureBodyBuilder : IBodyBuilder
     {
         var data = new List<Document>
         {
-            new Document(fileId)
+            new(fileId)
         };
-        await Task.Completed();
+        await Task.CompletedTask;
         return data.ToJson();
     }
 }

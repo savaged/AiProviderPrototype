@@ -1,6 +1,4 @@
 ﻿using Savaged.Data.Doxis.API.Interfaces;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace Savaged.Data.Doxis.API.Client;
 

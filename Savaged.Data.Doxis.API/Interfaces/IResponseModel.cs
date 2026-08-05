@@ -4,5 +4,5 @@ public interface IResponseModel
 {
     string result { get; }
     string request_id { get; }
-    object data { get; }
+    string data { get; }
 }

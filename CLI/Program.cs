@@ -26,3 +26,5 @@ Console.WriteLine("Running");
 
 var result = await dis.CaptureFinancialAsync(args[0]);
 
+Console.WriteLine(result);
+
