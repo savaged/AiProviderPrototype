@@ -14,15 +14,15 @@ IDoxisClient client = new DoxisClient(
     "https://dochorizon.klippa.com/api/services/",
     DoxisConfig.GetApiKey());
 
-var saveToStorageBodyBuilder = new SaveToStorageBodyBuilder(new LocalFileService());
-
-IDoxisServiceRepository repos = new DoxisServiceRepository(
-    new DoxisService(client, DoxisServiceRepository.SAVE_TO_STORAGE_SERVICE_END_POINT),
-    saveToStorageBodyBuilder,
-    new DoxisService(client, DoxisServiceRepository.CAPTURE_FINANCIAL_SERVICE_END_POINT)
+IDoxisInvoiceService dis = new DoxisInvoiceService(
+    new DoxisService(client, DoxisInvoiceService.SAVE_TO_STORAGE_SERVICE_END_POINT),
+    new SaveToStorageBodyBuilder(new LocalFileService()),
+    new DoxisService(client, DoxisInvoiceService.CAPTURE_FINANCIAL_SERVICE_END_POINT),
+    new SaveToStorageResponseDeconstructor(),
+    new DocumentCaptureBodyBuilder()
     );
 
 Console.WriteLine("Running");
-var result = await repos.SaveToStorageAsync(args[0]);
-Console.WriteLine(result);
+
+var result = await dis.CaptureFinancialAsync(args[0]);
 

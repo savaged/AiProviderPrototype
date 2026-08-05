@@ -15,4 +15,18 @@ public static class BuiltInTypesEx
 
     public static string ToJson(this object o) => JsonConvert.SerializeObject(o);
 
+    public static IDictionary<string, object> TryToDictionary(this string json)
+    {
+        IDictionary<string, object> value;
+        try
+        {
+            value = JsonConvert.DeserializeObject<IDictionary<string, object>>(json);
+        }
+        catch
+        {
+            value = new Dictionary<string, object>();
+        }
+        return value;
+    }
+
 }
