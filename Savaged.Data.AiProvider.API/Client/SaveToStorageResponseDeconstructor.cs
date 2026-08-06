@@ -1,8 +1,8 @@
-using Savaged.Data.Doxis.API.Interfaces;
-using Savaged.Data.Doxis.API.Models;
+using Savaged.Data.AiProvider.API.Interfaces;
+using Savaged.Data.AiProvider.API.Models;
 using Savaged.Core.Extensions;
 
-namespace Savaged.Data.Doxis.API.Client;
+namespace Savaged.Data.AiProvider.API.Client;
 
 public class SaveToStorageResponseDeconstructor : IResponseDeconstructor
 {

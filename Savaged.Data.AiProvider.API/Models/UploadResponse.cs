@@ -1,5 +1,5 @@
-using Savaged.Data.Doxis.API.Interfaces;
+using Savaged.Data.AiProvider.API.Interfaces;
 
-namespace Savaged.Data.Doxis.API.Models;
+namespace Savaged.Data.AiProvider.API.Models;
 
 public record UploadResponse(string result, string request_id, string data) : IResponseModel;

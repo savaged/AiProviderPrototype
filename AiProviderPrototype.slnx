@@ -1,7 +1,7 @@
 <Solution>
   <Project Path="CLI/CLI.csproj" />
   <Project Path="Savaged.Core.Extensions/Savaged.Core.Extensions.csproj" />
-  <Project Path="Savaged.Data.Doxis.API/Savaged.Data.Doxis.API.csproj" />
+  <Project Path="Savaged.Data.AiProvider.API/Savaged.Data.AiProvider.API.csproj" />
   <Project Path="Savaged.Data.FileIO/Savaged.Data.FileIO.csproj" />
   <Project Path="Savaged.Data.Interfaces/Savaged.Data.Interfaces.csproj" />
 </Solution>

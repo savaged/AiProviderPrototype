@@ -1,4 +1,4 @@
-namespace Savaged.Data.Doxis.API.Interfaces;
+namespace Savaged.Data.AiProvider.API.Interfaces;
 
 public interface IBodyBuilder
 {

@@ -1,12 +1,12 @@
-﻿using Savaged.Data.Doxis.API.Interfaces;
+﻿using Savaged.Data.AiProvider.API.Interfaces;
 
-namespace Savaged.Data.Doxis.API.Client;
+namespace Savaged.Data.AiProvider.API.Client;
 
-public class DoxisService : IDoxisService
+public class AiProviderService : IAiProviderService
 {
-    private readonly IDoxisClient _doxisClient;
+    private readonly IAiProviderClient _doxisClient;
 
-    public DoxisService(IDoxisClient doxisClient, string endPoint, HttpVerb verb = HttpVerb.POST)
+    public AiProviderService(IAiProviderClient doxisClient, string endPoint, HttpVerb verb = HttpVerb.POST)
     {
         _doxisClient = doxisClient;
         EndPoint = endPoint;

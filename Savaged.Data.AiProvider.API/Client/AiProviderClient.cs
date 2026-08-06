@@ -1,15 +1,15 @@
-﻿using Savaged.Data.Doxis.API.Interfaces;
+﻿using Savaged.Data.AiProvider.API.Interfaces;
 using System.Text;
 
-namespace Savaged.Data.Doxis.API.Client;
+namespace Savaged.Data.AiProvider.API.Client;
 
-public class DoxisClient : IDoxisClient
+public class AiProviderClient : IAiProviderClient
 {
     private readonly HttpClient _httpClient;
     private readonly string _baseUrl;
     private readonly string _apiKey;
 
-    public DoxisClient(
+    public AiProviderClient(
         HttpClient httpClient,
         string baseUrl,
         string apiKey)

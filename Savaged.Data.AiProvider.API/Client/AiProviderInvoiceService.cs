@@ -1,22 +1,22 @@
-﻿using Savaged.Data.Doxis.API.Interfaces;
+﻿using Savaged.Data.AiProvider.API.Interfaces;
 
-namespace Savaged.Data.Doxis.API.Client;
+namespace Savaged.Data.AiProvider.API.Client;
 
-public class DoxisInvoiceService : IDoxisInvoiceService
+public class AiProviderInvoiceService : IAiProviderInvoiceService
 {
-    private readonly IDictionary<string, IDoxisService> _doxisServiceRepository;
+    private readonly IDictionary<string, IAiProviderService> _doxisServiceRepository;
     private readonly IBodyBuilder _saveToStorageBodyBuilder;
     private readonly IResponseDeconstructor _saveToStorageResponseDeconstructor;
     private readonly IBodyBuilder _documentCaptureBodyBuilder;
 
-    public DoxisInvoiceService(
-        IDoxisService saveToStorageService,
+    public AiProviderInvoiceService(
+        IAiProviderService saveToStorageService,
         IBodyBuilder saveToStorageBodyBuilder,
-        IDoxisService captureFinancialService,
+        IAiProviderService captureFinancialService,
         IResponseDeconstructor saveToStorageResponseDeconstructor,
         IBodyBuilder documentCaptureBodyBuilder)
     {
-        _doxisServiceRepository = new Dictionary<string, IDoxisService>
+        _doxisServiceRepository = new Dictionary<string, IAiProviderService>
         {
             { SAVE_TO_STORAGE_SERVICE_END_POINT, saveToStorageService },
             { CAPTURE_FINANCIAL_SERVICE_END_POINT, captureFinancialService }

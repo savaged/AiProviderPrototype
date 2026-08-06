@@ -1,6 +1,6 @@
-namespace Savaged.Data.Doxis.API.Client;
+namespace Savaged.Data.AiProvider.API.Client;
 
-public static partial class DoxisConfig
+public static partial class AiProviderConfig
 {
     // Set in partial
     private static string _apiKey = "";

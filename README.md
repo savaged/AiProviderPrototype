@@ -1,6 +1,6 @@
-# DoxisPrototype
+# AiProviderPrototype
 
-Learning the Doxis API
+Learning the AiProvider API
 
 ## TODO
 
