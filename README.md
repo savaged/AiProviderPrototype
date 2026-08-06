@@ -1,6 +1,6 @@
 # AiProviderPrototype
 
-Learning the AiProvider API
+Learning an AI Provider API
 
 ## TODO
 
