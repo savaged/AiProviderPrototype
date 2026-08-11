@@ -2,7 +2,7 @@
   "profiles": {
     "CLI": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\DavidSavage\\Downloads\\Invoice123.pdf\""
+      "commandLineArgs": "\"C:\\Users\\%USERNAME%\\Downloads\\Invoice123.pdf\""
     }
   }
 }
