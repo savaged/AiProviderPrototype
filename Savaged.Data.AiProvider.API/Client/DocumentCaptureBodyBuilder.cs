@@ -8,11 +8,20 @@ public class DocumentCaptureBodyBuilder : IBodyBuilder
 {
     public async Task<string> BuildAsync(string fileId)
     {
-        var data = new List<Document>
+        var request = new
         {
-            new(fileId)
-        };
-        await Task.CompletedTask;
-        return data.ToJson();
+            documents = new[]
+            {
+                new
+                {
+                    file_id = fileId
+                }
+            },
+            configuration = new
+            {
+                slug = "invoices"
+            }
+        };
+        return request.ToJson();
     }
 }

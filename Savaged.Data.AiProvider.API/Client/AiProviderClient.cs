@@ -37,8 +37,12 @@ public class AiProviderClient : IAiProviderClient
         }
     }
 
-    private void AddHeader() =>
-        _httpClient.DefaultRequestHeaders.Add("x-api-key", _apiKey);
+    private void AddHeader()
+    {
+        const string key = "x-api-key";
+        if (!_httpClient.DefaultRequestHeaders.Contains(key))
+            _httpClient.DefaultRequestHeaders.Add(key, _apiKey);
+    }
 
     private StringContent ConvertToContent(string body) =>
         new StringContent(body, Encoding.UTF8, "application/json");
