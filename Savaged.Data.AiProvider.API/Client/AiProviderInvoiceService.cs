@@ -8,13 +8,15 @@ public class AiProviderInvoiceService : IAiProviderInvoiceService
     private readonly IBodyBuilder _saveToStorageBodyBuilder;
     private readonly IResponseDeconstructor _saveToStorageResponseDeconstructor;
     private readonly IBodyBuilder _documentCaptureBodyBuilder;
+    private readonly IResponseDeconstructor _documentCaptureResponseDeconstructor;
 
     public AiProviderInvoiceService(
         IAiProviderService saveToStorageService,
         IBodyBuilder saveToStorageBodyBuilder,
         IAiProviderService captureFinancialService,
         IResponseDeconstructor saveToStorageResponseDeconstructor,
-        IBodyBuilder documentCaptureBodyBuilder)
+        IBodyBuilder documentCaptureBodyBuilder,
+        IResponseDeconstructor documentCaptureResponseDeconstructor)
     {
         _doxisServiceRepository = new Dictionary<string, IAiProviderService>
         {
@@ -24,6 +26,7 @@ public class AiProviderInvoiceService : IAiProviderInvoiceService
         _saveToStorageBodyBuilder = saveToStorageBodyBuilder;
         _saveToStorageResponseDeconstructor = saveToStorageResponseDeconstructor;
         _documentCaptureBodyBuilder = documentCaptureBodyBuilder;
+        _documentCaptureResponseDeconstructor = documentCaptureResponseDeconstructor;
     }
 
     public const string SAVE_TO_STORAGE_SERVICE_END_POINT = "storage/v1/files";
@@ -42,6 +45,7 @@ public class AiProviderInvoiceService : IAiProviderInvoiceService
     {
         var body = await _saveToStorageBodyBuilder.BuildAsync(fileLocation);
         var service = _doxisServiceRepository[SAVE_TO_STORAGE_SERVICE_END_POINT];
-        return await service.EnactAsync(body);
+        return _documentCaptureResponseDeconstructor.Deconstruct(await service.EnactAsync(body))?.ToString()
+            ?? string.Empty;
     }
 }

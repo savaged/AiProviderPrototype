@@ -19,7 +19,8 @@ IAiProviderInvoiceService dis = new AiProviderInvoiceService(
     new SaveToStorageBodyBuilder(new LocalFileService()),
     new AiProviderService(client, AiProviderInvoiceService.CAPTURE_FINANCIAL_SERVICE_END_POINT),
     new SaveToStorageResponseDeconstructor(),
-    new DocumentCaptureBodyBuilder()
+    new DocumentCaptureBodyBuilder(),
+    new DocumentCaptureResponseDeconstructor()
     );
 
 Console.WriteLine("Running");
